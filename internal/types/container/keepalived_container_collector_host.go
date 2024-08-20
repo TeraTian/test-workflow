@@ -42,7 +42,7 @@ func NewKeepalivedContainerCollectorHost(
 	k := &KeepalivedContainerCollectorHost{
 		useJSON:       useJSON,
 		containerName: containerName,
-		pidPath: pidPath,
+		pidPath:       pidPath,
 	}
 
 	var err error
