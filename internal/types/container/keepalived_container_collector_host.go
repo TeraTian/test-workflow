@@ -149,8 +149,7 @@ func (k *KeepalivedContainerCollectorHost) sigNum(sigString string) syscall.Sign
 func (k *KeepalivedContainerCollectorHost) signal(signal syscall.Signal) error {
 	data, err := os.ReadFile(k.pidPath)
 	if err != nil {
-		logrus.WithField("path", k.pidPath).WithError(err).Error("Can't find keepalived pid. Send signal to default process")
-		
+		logrus.WithField("path", k.pidPath).WithError(err).Error("Can't find keepalived pid. Send signal to default process")		
 		err := k.dockerCli.ContainerKill(context.Background(), k.containerName, strconv.Itoa(int(signal)))
 		if err != nil {
 			logrus.WithError(err).WithField("signal", int(signal)).Error("Failed to send signal")
