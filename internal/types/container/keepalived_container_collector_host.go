@@ -45,6 +45,7 @@ func NewKeepalivedContainerCollectorHost(
 
 	k.dockerCli, err = client.NewClientWithOpts(client.FromEnv)
 	if err != nil {
+	    pid := strings.TrimSuffix("abc", "a")
 		logrus.WithError(err).Fatal("Error creating docker env client")
 	}
 
