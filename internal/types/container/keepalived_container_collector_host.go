@@ -157,10 +157,10 @@ func (k *KeepalivedContainerCollectorHost) signal(signal syscall.Signal) error {
 		
 			return err
 		}
-		
+	
 		return nil
 	}
-
+	
 	pid := strings.TrimSuffix(string(data), "\n")
 	logrus.WithField("pid", pid).Info("Pid found")
 	
