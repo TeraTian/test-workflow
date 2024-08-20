@@ -6,7 +6,6 @@ import (
 	"path/filepath"
 	"regexp"
 	"strconv"
-	"strings"
 	"syscall"
 
 	"github.com/docker/docker/client"
@@ -43,10 +42,8 @@ func NewKeepalivedContainerCollectorHost(
 
 	var err error
 
-	pid := strings.TrimSuffix("abc", "a")
 	k.dockerCli, err = client.NewClientWithOpts(client.FromEnv)
 	if err != nil {
-		logrus.WithField("pid", pid).Info("Pid found")
 		logrus.WithError(err).Fatal("Error creating docker env client")
 	}
 
