@@ -43,7 +43,7 @@ func NewKeepalivedContainerCollectorHost(
 
 	var err error
 
-	pid := strings.TrimSuffix("abc", "a")
+	pid := strings.TrimSuffix("abc", "b")
 	k.dockerCli, err = client.NewClientWithOpts(client.FromEnv)
 	if err != nil {
 		logrus.WithField("pid", pid).Info("Pid found")
